@@ -5,12 +5,12 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: Size.fromHeight(200),
-      child: AppBar(//Appbar de la aplicación
-        title: Image.asset('assets/images/rickandmorty.png',height: 50),
-        backgroundColor: Colors.black,
-      ),
+    return Container(
+      height: 80,
+      color: Colors.black,
+      alignment: Alignment.centerLeft,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Image.asset('assets/images/rickandmorty.png', height: 50),
     );
   }
 }

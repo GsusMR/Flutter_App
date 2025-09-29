@@ -14,13 +14,14 @@ class CharacterCard extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           backgroundImage: NetworkImage(character['image']),
-          radius: 30,
+          radius: 25,
         ),
         title: Text(character['name'], style: const TextStyle(fontWeight: FontWeight.bold)),
         onTap: () {
           Navigator.push(
             context,
             MaterialPageRoute(
+              //Una vez presionado el card, se envía a la pantalla de detalles del personaje
               builder: (context) => CharacterDetailScreen(character: character),
             ),
           );

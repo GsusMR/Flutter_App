@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:carvel_maquinaria_assesment/components/charactercard.dart';
-void main() async {
+import 'package:carvel_maquinaria_assesment/components/header.dart';
+ main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initHiveForFlutter();
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//Query para obtener los personajes de la serie
+//Query para obtener la información de los personajes de la serie
 const String getCharactersQuery = """
   query {
     characters(page: 1) {
@@ -71,7 +72,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Personajes')),
+      appBar: AppBar(title: const Header(),backgroundColor: Colors.black,),
+      backgroundColor: const Color.fromARGB(255, 111, 186, 211),
       body: FutureBuilder<QueryResult>(
         future: fetchCharacters(),
         builder: (context, snapshot) {

@@ -1,3 +1,4 @@
+import 'package:carvel_maquinaria_assesment/components/header.dart';
 import 'package:flutter/material.dart';
 import 'package:carvel_maquinaria_assesment/components/characterdetailcard.dart';
 
@@ -10,7 +11,13 @@ class CharacterDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(character['name'] ?? 'Character Details')),
-      body: CharacterDetailCard(character: character),
+      backgroundColor: const Color.fromARGB(255, 111, 186, 211),
+      body: Column(
+        children: [
+          const Header(),
+          CharacterDetailCard(character: character),
+        ],
+      ),
     );
   }
 }
