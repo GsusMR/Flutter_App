@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
 
   const HomeScreen({super.key, required this.client});
 
-  Future<QueryResult> fetchCharacters() async {
+  Future<QueryResult> fetchCharacters() async { //Función para obtener los personajes
     final options = QueryOptions(document: gql(getCharactersQuery));
     return await client.query(options).timeout(
       const Duration(seconds: 10),
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
             itemCount: characters.length,
             itemBuilder: (context, index) {
               final character = characters[index];
-              return CharacterCard(character:character);
+              return CharacterCard(character:character); //Se envía la información al CharacterCard para mostrarla
             },
           );
         },
